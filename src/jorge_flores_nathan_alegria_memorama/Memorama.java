@@ -11,21 +11,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.OptionPaneUI;
+
 /**
  *
  * @author jfflo
  */
 public class Memorama extends javax.swing.JFrame {
-    private boolean caraUp = false;
+
+    private boolean vuelta = false;
     private Logic log = new Logic();
-    private int puntaje = 0;
+    private int intentos = 0;
     private boolean primerc = false;
     private ImageIcon im1;
     private ImageIcon im2;
     private JButton[] pbtn = new JButton[2];
-    
-    
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Memorama.class.getName());
 
     /**
@@ -33,48 +33,171 @@ public class Memorama extends javax.swing.JFrame {
      */
     public Memorama() {
         initComponents();
-     
+
         setCartas();
     }
-    private void setCartas(){
-        int[]numeros = log.getNumeroCartas();
-        
-        btnA1.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[0]+".png")));
-        btnA2.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[1]+".png")));
-        btnA3.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[2]+".png")));
-        btnA4.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[3]+".png")));
-        btnA5.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[4]+".png")));
-        btnA6.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[5]+".png")));
-        btnA7.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[6]+".png")));
-        btnA8.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[7]+".png")));
-        btnA9.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[8]+".png")));
-        btnA10.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[9]+".png")));
-        btnA11.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[10]+".png")));
-        btnA12.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[11]+".png")));
-        btnA13.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[12]+".png")));
-        btnA14.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[13]+".png")));
-        btnA15.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[14]+".png")));
-        btnA16.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[15]+".png")));
-        btnA17.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[16]+".png")));
-        btnA18.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[17]+".png")));
-        btnA19.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[18]+".png")));
-        btnA20.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[19]+".png")));
-        btnA21.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[20]+".png")));
-        btnA22.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[21]+".png")));
-        btnA23.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[22]+".png")));
-        btnA24.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[23]+".png")));
-        btnA25.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[24]+".png")));
-        btnA26.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[25]+".png")));
-        btnA27.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[26]+".png")));
-        btnA28.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[27]+".png")));
-        btnA29.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[28]+".png")));
-        btnA30.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[29]+".png")));
-        btnA31.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[30]+".png")));
-        btnA32.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[31]+".png")));
-        btnA33.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[32]+".png")));
-        btnA34.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[33]+".png")));
-        btnA35.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[34]+".png")));
-        btnA36.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[35]+".png")));
+
+    private void setCartas() {
+        int[] numeros = log.getNumeroCartas();
+
+        btnA1.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[0] + ".png")));
+        btnA2.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[1] + ".png")));
+        btnA3.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[2] + ".png")));
+        btnA4.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[3] + ".png")));
+        btnA5.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[4] + ".png")));
+        btnA6.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[5] + ".png")));
+        btnA7.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[6] + ".png")));
+        btnA8.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[7] + ".png")));
+        btnA9.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[8] + ".png")));
+        btnA10.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[9] + ".png")));
+        btnA11.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[10] + ".png")));
+        btnA12.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[11] + ".png")));
+        btnA13.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[12] + ".png")));
+        btnA14.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[13] + ".png")));
+        btnA15.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[14] + ".png")));
+        btnA16.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[15] + ".png")));
+        btnA17.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[16] + ".png")));
+        btnA18.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[17] + ".png")));
+        btnA19.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[18] + ".png")));
+        btnA20.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[19] + ".png")));
+        btnA21.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[20] + ".png")));
+        btnA22.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[21] + ".png")));
+        btnA23.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[22] + ".png")));
+        btnA24.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[23] + ".png")));
+        btnA25.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[24] + ".png")));
+        btnA26.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[25] + ".png")));
+        btnA27.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[26] + ".png")));
+        btnA28.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[27] + ".png")));
+        btnA29.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[28] + ".png")));
+        btnA30.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[29] + ".png")));
+        btnA31.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[30] + ".png")));
+        btnA32.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[31] + ".png")));
+        btnA33.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[32] + ".png")));
+        btnA34.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[33] + ".png")));
+        btnA35.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[34] + ".png")));
+        btnA36.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c" + numeros[35] + ".png")));
+    }
+
+    private void btnEnabled(JButton btn) {
+
+        if (!vuelta) {
+            btn.setEnabled(false);
+            im1 = (ImageIcon) btn.getDisabledIcon();
+            pbtn[0] = btn;
+            vuelta = true;
+            primerc = false;
+        } else {
+            btn.setEnabled(false);
+            im2 = (ImageIcon) btn.getDisabledIcon();
+            pbtn[1] = btn;
+            primerc = true;
+            intentos++;
+            resultado();
+        }
+    }
+
+    private void comparar() {
+        if (vuelta && primerc) {
+
+            if (im1.getDescription().compareTo(im2.getDescription()) != 0) {
+                pbtn[0].setEnabled(true);
+                pbtn[1].setEnabled(true);
+                if (intentos == 10) {
+                    System.out.println("Intentons Maximos Alcanzados" + "Intentos" + intentos);
+                    System.exit(1);
+                }
+            }
+            vuelta = false;
+        }
+    }
+
+    private void reiniciar() {
+
+        btnA1.setEnabled(true);
+        btnA2.setEnabled(true);
+        btnA3.setEnabled(true);
+        btnA4.setEnabled(true);
+        btnA5.setEnabled(true);
+        btnA6.setEnabled(true);
+        btnA7.setEnabled(true);
+        btnA8.setEnabled(true);
+        btnA9.setEnabled(true);
+        btnA10.setEnabled(true);
+        btnA11.setEnabled(true);
+        btnA12.setEnabled(true);
+        btnA13.setEnabled(true);
+        btnA14.setEnabled(true);
+        btnA15.setEnabled(true);
+        btnA16.setEnabled(true);
+        btnA17.setEnabled(true);
+        btnA18.setEnabled(true);
+        btnA19.setEnabled(true);
+        btnA20.setEnabled(true);
+        btnA21.setEnabled(true);
+        btnA22.setEnabled(true);
+        btnA23.setEnabled(true);
+        btnA24.setEnabled(true);
+        btnA25.setEnabled(true);
+        btnA26.setEnabled(true);
+        btnA27.setEnabled(true);
+        btnA28.setEnabled(true);
+        btnA29.setEnabled(true);
+        btnA30.setEnabled(true);
+        btnA31.setEnabled(true);
+        btnA32.setEnabled(true);
+        btnA33.setEnabled(true);
+        btnA34.setEnabled(true);
+        btnA35.setEnabled(true);
+        btnA36.setEnabled(true);
+        primerc = false;
+        vuelta = false;
+        intentos = 0;
+    }
+
+    private void resultado() {
+        if (!btnA1.isEnabled() && !btnA2.isEnabled() && !btnA3.isEnabled() && !btnA4.isEnabled() && !btnA5.isEnabled() && !btnA6.isEnabled()
+                && !btnA7.isEnabled() && !btnA8.isEnabled() && !btnA9.isEnabled() && !btnA10.isEnabled() && !btnA11.isEnabled()
+                && !btnA12.isEnabled() && !btnA13.isEnabled() && !btnA14.isEnabled() && !btnA15.isEnabled() && !btnA16.isEnabled() && !btnA17.isEnabled() && !btnA18.isEnabled()
+                && !btnA19.isEnabled() && !btnA20.isEnabled() && !btnA21.isEnabled() && !btnA22.isEnabled()
+                && !btnA23.isEnabled() && !btnA24.isEnabled() && !btnA25.isEnabled() && !btnA26.isEnabled() && !btnA27.isEnabled()
+                && !btnA28.isEnabled() && !btnA29.isEnabled() && !btnA30.isEnabled() && !btnA31.isEnabled() && !btnA32.isEnabled() && !btnA33.isEnabled() && !btnA34.isEnabled()
+                && !btnA35.isEnabled() && !btnA36.isEnabled()) {
+            if (intentos != 10) {
+                JOptionPane.showMessageDialog(this, "Felicidades, usted ha ganado. Intentos: " + intentos, "Ganaste!!", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Lo siento,Intentos Max alcanzados. Intentos: " + intentos, "Perdiste!!", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }
+
+  
+
+    public static void main(String args[]) {
+
+
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Memorama().setVisible(true);
+            }
+        });
     }
 
     /**
@@ -130,31 +253,61 @@ public class Memorama extends javax.swing.JFrame {
 
         jLabel1.setText("Bienvenido");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         btnA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA1.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA1.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA1ActionPerformed(evt);
+            }
+        });
 
         btnA2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA2.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA2.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA2ActionPerformed(evt);
+            }
+        });
 
         btnA3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA3.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA3.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA3ActionPerformed(evt);
+            }
+        });
 
         btnA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA4.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA4.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA4ActionPerformed(evt);
+            }
+        });
 
         btnA5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA5.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA5.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA5ActionPerformed(evt);
+            }
+        });
 
         btnA6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA6.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA6.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA6ActionPerformed(evt);
+            }
+        });
 
         btnA12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA12.setMaximumSize(new java.awt.Dimension(343, 512));
@@ -356,7 +509,7 @@ public class Memorama extends javax.swing.JFrame {
                         .addComponent(btnA35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnA36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 759, Short.MAX_VALUE))
+                .addGap(0, 29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,37 +594,45 @@ public class Memorama extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(675, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA1ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA1);
+    }//GEN-LAST:event_btnA1ActionPerformed
+
+    private void btnA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA2ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA2);
+    }//GEN-LAST:event_btnA2ActionPerformed
+
+    private void btnA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA3ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA3);
+    }//GEN-LAST:event_btnA3ActionPerformed
+
+    private void btnA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA4ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA4);
+    }//GEN-LAST:event_btnA4ActionPerformed
+
+    private void btnA5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA5ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA5);
+    }//GEN-LAST:event_btnA5ActionPerformed
+
+    private void btnA6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA6ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA6);
+    }//GEN-LAST:event_btnA6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Memorama().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnA1;
@@ -514,4 +675,5 @@ public class Memorama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
 }
