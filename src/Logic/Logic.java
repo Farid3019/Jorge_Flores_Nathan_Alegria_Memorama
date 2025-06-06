@@ -8,33 +8,34 @@ import java.util.Random;
 
 /**
  *
- * @author jfflo
+ * @author Dark
  */
 public class Logic {
-
+    
     public int[] getNumeroCartas() {
-        int[] numeros = new int[36];
-        int contador = 0;
-        int nvr = 0;
-
-        while (contador < 36) {
-            Random random = new Random();
-            int na = random.nextInt(18) + 1;
-
+        
+        int[] numbers = new int[36];
+        int count = 0;
+        
+        while(count < 16) {
+            Random r = new Random();
+            int na = r.nextInt(18) + 1;
+            int nvr = 0;
+            
             for (int i = 0; i < 36; i++) {
-                if (numeros[i] == na) {
+                if(numbers[i] == na) {
                     nvr++;
                 }
-
             }
-            if (nvr < 2) {
-                numeros[contador] = na;
-                contador++;
+            if(nvr < 2) {
+                numbers[count] = na;
+                count++;
             }
             
-
         }
-return numeros;
+        
+        
+        return numbers;
     }
-    
+            
 }
