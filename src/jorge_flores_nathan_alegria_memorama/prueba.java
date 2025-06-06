@@ -2,15 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Logic;
+package jorge_flores_nathan_alegria_memorama;
+
 import java.util.Random;
+
 /**
  *
  * @author jfflo
  */
-public class Logic {
-    public int [] getNumeroCartas(){
-    int [] numeros = new int [36];
+public class prueba {
+    public static void main(String[] args) {
+        int [] numeros = new int [36];
     int contador = 0;
     int nvr = 0;
     
@@ -27,7 +29,10 @@ public class Logic {
         if(nvr < 2){ numeros[contador] = na;
         contador++;
     }
-    
+        
+        }
+    for (int i = 0; i < 36; i++) {
+            System.out.println(numeros[i]+"");
+    }
+    }
 }
-    
-      
