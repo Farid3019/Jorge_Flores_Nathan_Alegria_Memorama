@@ -9,5 +9,7 @@ package Logic;
  * @author jfflo
  */
 public class Logic {
-    
+    public int [] getNumeroCartas{
+    int [] numeros = new int [36];
+}
 }
