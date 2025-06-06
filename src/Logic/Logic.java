@@ -31,9 +31,7 @@ public class Logic {
                 numeros[contador] = na;
                 contador++;
             }
-            for (int i = 0; i < 36; i++) {
-                System.out.println(numeros[i] + "");
-            }
+            
 
         }
 return numeros;

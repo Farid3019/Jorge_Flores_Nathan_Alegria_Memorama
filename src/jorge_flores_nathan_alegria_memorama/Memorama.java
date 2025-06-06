@@ -4,6 +4,7 @@
  */
 package jorge_flores_nathan_alegria_memorama;
 import Logic.Logic;
+import javax.swing.ImageIcon;
 /**
  *
  * @author jfflo
@@ -22,9 +23,47 @@ public class Memorama extends javax.swing.JFrame {
     public Memorama() {
         initComponents();
      
+        setCartas();
     }
     private void setCartas(){
         int[]numeros = log.getNumeroCartas();
+        
+        btnA1.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[0]+".png")));
+        btnA2.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[1]+".png")));
+        btnA3.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[2]+".png")));
+        btnA4.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[3]+".png")));
+        btnA5.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[4]+".png")));
+        btnA6.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[5]+".png")));
+        btnA7.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[6]+".png")));
+        btnA8.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[7]+".png")));
+        btnA9.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[8]+".png")));
+        btnA10.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[9]+".png")));
+        btnA11.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[10]+".png")));
+        btnA12.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[11]+".png")));
+        btnA13.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[12]+".png")));
+        btnA14.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[13]+".png")));
+        btnA15.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[14]+".png")));
+        btnA16.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[15]+".png")));
+        btnA17.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[16]+".png")));
+        btnA18.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[17]+".png")));
+        btnA19.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[18]+".png")));
+        btnA20.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[19]+".png")));
+        btnA21.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[20]+".png")));
+        btnA22.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[21]+".png")));
+        btnA23.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[22]+".png")));
+        btnA24.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[23]+".png")));
+        btnA25.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[24]+".png")));
+        btnA26.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[25]+".png")));
+        btnA27.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[26]+".png")));
+        btnA28.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[27]+".png")));
+        btnA29.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[28]+".png")));
+        btnA30.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[29]+".png")));
+        btnA31.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[30]+".png")));
+        btnA32.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[31]+".png")));
+        btnA33.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[32]+".png")));
+        btnA34.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[33]+".png")));
+        btnA35.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[34]+".png")));
+        btnA36.setDisabledIcon(new ImageIcon(getClass().getResource("../imagenes_cartas/c"+numeros[35]+".png")));
     }
 
     /**
@@ -306,7 +345,7 @@ public class Memorama extends javax.swing.JFrame {
                         .addComponent(btnA35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnA36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 771, Short.MAX_VALUE))
+                .addGap(0, 759, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,7 +417,10 @@ public class Memorama extends javax.swing.JFrame {
                 .addGap(68, 68, 68)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

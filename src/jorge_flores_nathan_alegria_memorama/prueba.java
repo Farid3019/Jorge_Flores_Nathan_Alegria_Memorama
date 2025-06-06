@@ -11,7 +11,8 @@ import java.util.Random;
  * @author jfflo
  */
 public class prueba {
-    public static void main(String[] args) {
+   
+    public static int[] main(String[] args) {
         int [] numeros = new int [36];
         int contador = 0;
         int nvr = 0;
@@ -34,10 +35,10 @@ public class prueba {
             }
            
             }
+        return numeros;
     }
 }
-        
-
+       
         
         
 
