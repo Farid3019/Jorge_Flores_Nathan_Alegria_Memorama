@@ -13,26 +13,31 @@ import java.util.Random;
 public class prueba {
     public static void main(String[] args) {
         int [] numeros = new int [36];
-    int contador = 0;
-    int nvr = 0;
-    
-    while(contador <36){
-        Random random = new Random();
-        int na = random.nextInt(18)+1;
-        
-        for (int i = 0; i < 36; i++) {
-            if(numeros[i] == na){
-                nvr++;
+        int contador = 0;
+        int nvr = 0;
+
+        while(contador <36){
+            Random random = new Random();
+            int na = random.nextInt(18)+1;
+
+            for (int i = 0; i < 36; i++) {
+                if(numeros[i] == na){
+                    nvr++;
+                }
+
             }
-            
+            if(nvr < 2){ numeros[contador] = na;
+            contador++;
         }
-        if(nvr < 2){ numeros[contador] = na;
-        contador++;
-    }
-        
-        }
-    for (int i = 0; i < 36; i++) {
-            System.out.println(numeros[i]+"");
-    }
+            for (int i = 0; i < 36; i++) {
+                System.out.println(numeros[i]+"");
+            }
+           
+            }
     }
 }
+        
+
+        
+        
+
