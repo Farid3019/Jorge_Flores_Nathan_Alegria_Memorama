@@ -312,26 +312,56 @@ public class Memorama extends javax.swing.JFrame {
         btnA12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA12.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA12.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA12ActionPerformed(evt);
+            }
+        });
 
         btnA11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA11.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA11.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA11ActionPerformed(evt);
+            }
+        });
 
         btnA10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA10.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA10.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA10ActionPerformed(evt);
+            }
+        });
 
         btnA9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA9.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA9.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA9ActionPerformed(evt);
+            }
+        });
 
         btnA8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA8.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA8.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA8ActionPerformed(evt);
+            }
+        });
 
         btnA7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA7.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA7.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA7ActionPerformed(evt);
+            }
+        });
 
         btnA18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA18.setMaximumSize(new java.awt.Dimension(343, 512));
@@ -348,14 +378,29 @@ public class Memorama extends javax.swing.JFrame {
         btnA15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA15.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA15.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA15ActionPerformed(evt);
+            }
+        });
 
         btnA14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA14.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA14.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA14ActionPerformed(evt);
+            }
+        });
 
         btnA13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA13.setMaximumSize(new java.awt.Dimension(343, 512));
         btnA13.setPreferredSize(new java.awt.Dimension(65, 90));
+        btnA13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA13ActionPerformed(evt);
+            }
+        });
 
         btnA24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_cartas/WhatsApp Image 2025-06-06 at 9.38.59 AM.jpeg"))); // NOI18N
         btnA24.setMaximumSize(new java.awt.Dimension(343, 512));
@@ -629,6 +674,51 @@ public class Memorama extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnEnabled(btnA6);
     }//GEN-LAST:event_btnA6ActionPerformed
+
+    private void btnA7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA7ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA7);
+    }//GEN-LAST:event_btnA7ActionPerformed
+
+    private void btnA8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA8ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA8);
+    }//GEN-LAST:event_btnA8ActionPerformed
+
+    private void btnA9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA9ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA9);
+    }//GEN-LAST:event_btnA9ActionPerformed
+
+    private void btnA10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA10ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA10);
+    }//GEN-LAST:event_btnA10ActionPerformed
+
+    private void btnA11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA11ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA11);
+    }//GEN-LAST:event_btnA11ActionPerformed
+
+    private void btnA12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA12ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA12);
+    }//GEN-LAST:event_btnA12ActionPerformed
+
+    private void btnA13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA13ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA13);
+    }//GEN-LAST:event_btnA13ActionPerformed
+
+    private void btnA14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA14ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA14);
+    }//GEN-LAST:event_btnA14ActionPerformed
+
+    private void btnA15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA15ActionPerformed
+        // TODO add your handling code here:
+        btnEnabled(btnA15);
+    }//GEN-LAST:event_btnA15ActionPerformed
 
     /**
      * @param args the command line arguments
